@@ -95,7 +95,7 @@
           var iterator = 0;
           iterator = contact.iterator();
           var actu;
-          actu = iterator.next()
+          actu = iterator.next();
 
           assert.equal(actu.firstName(),tab[0].innerHTML);
           assert.equal(actu.lastName(),tab[1].innerHTML);
@@ -108,7 +108,14 @@
       });
 
       QUnit.test("remove contact tests", function (assert) {
-        assert.ok(false);
+          var tab = $('table tbody tr td a');
+          tab[0].click();
+          var contact = Contact.Contacts.instance();
+          var iterator = contact.iterator();
+          var actu = iterator.next();
+
+          assert.equal(actu.firstName(),"Jacques")
+
       });
 
       QUnit.test("sort contact tests", function (assert) {
